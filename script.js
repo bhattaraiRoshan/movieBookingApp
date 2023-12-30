@@ -4,7 +4,7 @@ const totalSeat = document.querySelector('#total');
 const movieName = document.querySelector('#moviename');
 const totalPrice = document.querySelector('#totalP');
 const containerSeat = document.querySelector('.container')
-const ticketPrice = +selectElm.value;
+let ticketPrice = +selectElm.value;
 
 
 
@@ -17,6 +17,30 @@ const updateSelectedSeat = () =>{
     
 
 }
+
+selectElm.addEventListener('change', (e)=>{
+
+   ticketPrice = +e.target.value
+   updateSelectedSeat()
+
+   let selectedMovie = selectElm.value
+ 
+
+   if(selectedMovie === '12'){
+
+    movieName.innerHTML = 'Mission Impossible'
+   } else if(selectedMovie === '10'){
+    movieName.innerHTML = 'Spider Man'
+
+   } else if(selectedMovie === '8'){
+
+    movieName.innerHTML = 'Barbie'
+
+   } else if(selectedMovie === '5'){
+    movieName.innerHTML = 'Avatar'
+   }
+    
+})
 
 
 containerSeat.addEventListener('click', (e)=>{
